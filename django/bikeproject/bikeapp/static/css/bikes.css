@@ -1,0 +1,279 @@
+/* Universal  Selector */
+*{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  top: 0;
+  margin: 0;
+}
+body{
+    background-color: #ffffff;
+    color: #1e1e2f;
+    font-size: 20px;
+}
+/* Header Section */
+header{
+    position: fixed;
+    right: 0;
+    left: 0;
+    padding: 10px;
+    background: #833AB4;
+    background: linear-gradient(90deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+    z-index: 1;
+}
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header nav ul li{
+    display: inline-block;
+    margin-right: 35px;
+}
+header nav ul li a{
+    color: #1e1e2f;
+    text-decoration: none;
+}
+header nav ul li a:hover{
+    font-weight: bolder;
+}
+/* Header Section Responsive Side Navigation Bar */
+.sidenavbar{
+    position: fixed;
+    background-color: #1e1e2f;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 40%;
+    font-size: 20px;
+    opacity: 0.9;
+    z-index: 2;
+    animation: sidenavbar 1s linear;
+    display: none;
+}
+@keyframes sidenavbar {
+    0%{
+        transform: translateX(-200px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+.sidenavbar nav{
+    padding: 80px 20px;
+    justify-self: center;
+}
+.sidenavbar h1{
+    color: #ffffff;
+    text-align: end;
+    margin-right: 20px;
+}
+.sidenavbar h1:hover{
+    cursor: pointer;
+    color: #ff0000;
+}
+.sidenavbar nav ul li{
+    margin-bottom: 10px;
+}
+.sidenavbar nav ul li a{
+    color: #ffffff;
+    text-decoration: none;
+}
+.sidenavbar nav ul li a:hover{
+    font-weight: bolder;
+    font-size: 25px;
+}
+/* Header Section Responsive Hamburger Menu */
+.hamburgermenu{
+    position: fixed;
+    right: 0;
+    left: 0;
+    padding: 10px;
+    background: #833AB4;
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    z-index: 1;
+    display: none;
+}
+.hamburgermenu div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hamburgermenu p i{
+    color: #ffffff;
+}
+.hamburgermenu p i:hover{
+    color: #1e1e2f;
+    cursor: pointer;
+}
+/* Big Bike Video */
+.bigbike video{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+/* Bikes Search */
+#bikessea{
+    margin-top: 565px;
+}
+.offer{
+    text-align: center;
+    animation: offer 2s infinite;
+}
+@keyframes offer {
+    0%{
+        color: #ffffff;
+        font-weight: bolder;
+    }
+    50%{
+        color: #1e1e2f;
+        font-weight: lighter;
+    }
+    100%{
+        color: #ffffff;
+        font-weight: bolder;
+    }
+}
+.bikesearch{
+    margin: 20px 30%;
+}
+.bikesearch input{
+    width: 100%;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 30px;
+    border: 2px solid #fd1d1d;
+    /* outline: none; */
+}
+.bikesearch{
+    position: relative;
+}
+.searchglass{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    bottom: 10px;
+}
+/* Bikes Section 1 */
+.bikes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 30px;
+    font-size: 15px;
+}
+.bikes div{
+    width: 300px;
+    height: 500px;
+    border: 2px solid #1e1e2f;
+    text-align: center;
+    margin: 20px;
+    justify-self: center;
+    background-color: #f8e9d5;
+    transition: 1s;
+    box-shadow: 0px 5px 10px black; /* 10px: Horizontal shadow 5px: Vertical shadow 5px: Blur radius */
+}
+.bikes div:hover{
+    transform: scale(1.04);
+}
+.bikes div h3, h4, p{
+    padding: 4px;
+}
+.bikes p{
+    padding-bottom: 15px;
+}
+.bikes div h3{
+    font-weight: bolder;
+}
+.bikes a{
+    text-decoration: none;
+    background-color: #ff0000;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+}
+.bikes a:hover{
+    color: #1e1e2f;
+    font-weight: bolder;
+}
+/* Load More */
+.loadmore{
+    display: flex;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.loadmore p{
+    padding: 10px;
+    background-color: #ff0000;
+    border-radius: 10px;
+}
+.loadmore p:hover{
+    color: #1e1e2f;
+    font-weight: bolder;
+    cursor: pointer;
+}
+/* Bike Section 2 */
+.bikes1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 30px;
+    font-size: 15px;
+    display: none;
+}
+.bikes1 div{
+    width: 300px;
+    height: 500px;
+    border: 2px solid #1e1e2f;
+    text-align: center;
+    margin: 20px;
+    justify-self: center;
+    background-color: #f8e9d5;
+    transition: 1s;
+    box-shadow: 0px 5px 10px black; /* 10px: Horizontal shadow 5px: Vertical shadow 5px: Blur radius */
+}
+.bikes1 div:hover{
+    transform: scale(1.04);
+}
+.bikes1 div h3, h4, p{
+    padding: 4px;
+}
+.bikes1 p{
+    padding-bottom: 15px;
+}
+.bikes1 div h3{
+    font-weight: bolder;
+}
+.bikes1 a{
+    text-decoration: none;
+    background-color: #ff0000;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+}
+.bikes1 a:hover{
+    color: #1e1e2f;
+    font-weight: bolder;
+}
+
+/* Media Query */
+@media screen and (max-width:800px){
+    /* Navigation Bar */
+    header{
+        display: none;
+    }
+    .hamburgermenu{
+        display: block;
+    }
+    /* Bikes Search */
+    .bikesearch{
+    margin: 20px 15%;
+    }
+}

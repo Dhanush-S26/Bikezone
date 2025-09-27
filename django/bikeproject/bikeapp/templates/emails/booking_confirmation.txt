@@ -1,0 +1,11 @@
+Hi {{ booking.username }},
+
+Your bike booking is confirmed!
+
+Bike: {{ booking.prefered_bike }}
+City: {{ booking.city }}
+Phone: {{ booking.phoneno }}
+
+Thanks for choosing BikeZone.
+
+— BikeZone Team

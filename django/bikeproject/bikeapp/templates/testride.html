@@ -1,0 +1,236 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BikeZone</title>
+    <!-- Title Icon -->
+    <link rel="icon" href="image/bikeTitle.png" />
+    <!-- Google Fonts Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome CDN Links -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="{% static 'css/bike1.css' %}" />
+  </head>
+  <body>
+    <!-- Header Section Static -->
+    <header>
+      <nav>
+        <h1 style="font-weight: bolder">
+          BikeZone <i class="fa-solid fa-motorcycle" style="color: #1e1e2f"></i>
+        </h1>
+        <ul>
+          <li><a href="{% url 'landing' %}">Home</a></li>
+          <li><a href="{% url 'bikes' %}">Bikes</a></li>
+          <li><a href="#aboutsec">About</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Header Section Responsive Side Navigation Bar -->
+    <div class="sidenavbar">
+      <h1 onclick="closeSideNavigationBar()">
+        <i class="fa-solid fa-xmark"></i>
+      </h1>
+      <nav>
+        <ul onclick="closeSideNavigationBar()">
+          <li><a href="{% url 'landing' %}">Home</a></li>
+          <li><a href="{% url 'bikes' %}">Bikes</a></li>
+          <li><a href="#aboutsec">About</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- Header Section Responsive Hamburger Menu -->
+    <div class="hamburgermenu">
+      <div>
+        <h1 style="font-weight: bolder">
+          BikeZone <i class="fa-solid fa-motorcycle" style="color: #1e1e2f"></i>
+        </h1>
+        <p id="bar" onclick="sideNavigationBar()">
+          <i class="fa-solid fa-bars"></i>
+        </p>
+      </div>
+    </div>
+    <!-- Form Section -->
+    <form action="{% url 'testride' %}" method="post">
+      {% csrf_token %}
+      <h1 style="font-weight: bold; text-align: center; margin-bottom: 20px">
+        Test Ride
+      </h1>
+      {% for message in messages %} {% if 'ridemsg' in message.tags %}
+      <p
+        style="
+          text-align: center;
+          margin-top: 10px;
+          margin-bottom: 20px;
+          color:
+            {% if 'success' in message.tags %}green
+            {% elif 'info' in message.tags %}blue
+            {% elif 'error' in message.tags %}red
+            {% else %}black
+            {% endif %};
+        "
+      >
+        {{message}}
+      </p>
+      {% endif %} {% endfor %}
+      <label for="name">Full Name</label>
+      <input
+        type="text"
+        name="username"
+        id="name"
+        placeholder="UserName"
+        required
+      />
+
+      <label for="email">Email</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Enter Your Email"
+        required
+      />
+
+      <label for="phone">Phone Number</label>
+      <input
+        type="tel"
+        name="phoneno"
+        id="phone"
+        placeholder="Enter Your Mobile Number"
+        required
+      />
+      <label for="date">Select Date & Time</label>
+      <input
+        type="datetime-local"
+        name="testride_datetime"
+        id="datetime"
+        required
+      />
+
+      <label for="city">City</label>
+      <select name="city" id="city" required>
+        <optgroup label="-- City --" style="text-align: center">
+          <option value="Chennai">Chennai</option>
+          <option value="Kancheepuram">Kancheepuram</option>
+          <option value="Chengalpattu">Chengalpattu</option>
+          <option value="Tiruvallur">Tiruvallur</option>
+        </optgroup>
+      </select>
+
+      <label for="prefered">Preferred Bike</label>
+      <select name="prefered_bike" id="prefered" required>
+        <optgroup label="-- Prefered Bike --" style="text-align: center">
+          <option value="Ducati Panigale V4">Ducati Panigale V4</option>
+          <option value="Honda CBR1000RR-R Fireblade">
+            Honda CBR1000RR-R Fireblade
+          </option>
+          <option value="Kawasaki Ninja ZX-10R">Kawasaki Ninja ZX-10R</option>
+          <option value="BMW R NineT Scrambler">BMW R NineT Scrambler</option>
+          <option value="Royal Enfield Classic 350">
+            Royal Enfield Classic 350
+          </option>
+          <option value="KTM RC 8C">KTM RC 8C</option>
+          <option value="Kawasaki Ninja 300">Kawasaki Ninja 300</option>
+          <option value="Honda H'ness CB350">Honda H'ness CB350</option>
+          <option value="Royal Enfield Hunter 350">
+            Royal Enfield Hunter 350
+          </option>
+          <option value="Royal Enfield Super Meteor 650">
+            Royal Enfield Super Meteor 650
+          </option>
+          <option value="Royal Enfield Scram 411">
+            Royal Enfield Scram 411
+          </option>
+          <option value="Yamaha YZF-R1">Yamaha YZF-R1</option>
+          <option value="Bajaj Dominar 400">Bajaj Dominar 400</option>
+          <option value="Roadscape 155">Roadscape 155</option>
+          <option value="BMW S 1000 XR">BMW S 1000 XR</option>
+          <option value="Suzuki Access 125">Suzuki Access 125</option>
+          <option value="Vespa GTS 300">Vespa GTS 300</option>
+          <option value="Ola S1">Ola S1</option>
+          <option value="Smoked Electric Scooter">
+            Smoked Electric Scooter
+          </option>
+          <option value="Honda">Honda</option>
+        </optgroup>
+      </select>
+
+      <label for="verify" style="text-align: center; margin: 5px"
+        ><input type="checkbox" name="biketitle" id="verify" required /> I
+        confirm my selection
+      </label>
+
+      <button type="submit" name="testride">Test Ride</button>
+    </form>
+    <form action="{% url 'testride' %}" method="post">
+      {% csrf_token %}
+      <h1 style="font-weight: bold; text-align: center; margin-bottom: 20px">
+        Check Status
+      </h1>
+      {% if testride %}
+      <div class="testride-table-container">
+        <table class="testride-table">
+          <tr>
+            <th>Name</th>
+            <td>{{ testride.username }}</td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td>{{ testride.email }}</td>
+          </tr>
+          <tr>
+            <th>City</th>
+            <td>{{ testride.city }}</td>
+          </tr>
+          <tr>
+            <th>Preferred Bike</th>
+            <td>{{ testride.prefered_bike }}</td>
+          </tr>
+          <tr>
+            <th>Date &amp; Time</th>
+            <td>{{ testride.testride_datetime|date:"d M Y H:i" }}</td>
+          </tr>
+        </table>
+      </div>
+      {% else %}
+      <p style="color: red; text-align: center">
+        No testride booking found with this number.
+      </p>
+      {% endif %}
+
+      <label for="phone">Phone Number</label>
+      <input
+        type="tel"
+        name="phoneno"
+        id="phone"
+        placeholder="Enter Your Mobile Number"
+        required
+      />
+      <button type="submit" name="checkride">Check</button>
+    </form>
+    <!-- Footer Section -->
+    <div class="footer">
+      <h2>BikeZone <i class="fa-solid fa-motorcycle"></i></h2>
+      <p>Your one-stop destination for bikes, gear, and rides.</p>
+      <p>📞 123-456-7890</p>
+      <p>© 2025 BikeZone. All Rights Reserved.</p>
+    </div>
+    <!-- JavaScript Link -->
+    <script src="{% static 'js/bike1.js' %}"></script>
+  </body>
+</html>

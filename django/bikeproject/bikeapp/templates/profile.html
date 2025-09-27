@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <!-- Title Icon -->
+    <link rel="icon" href="{% static 'image/bikeTitle.png' %}" />
+    <!-- Google Fonts Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome CDN Links -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+  </head>
+  <body>
+    <!-- Profile Section -->
+    <div class="profile">
+      <h2>Booking History</h2>
+      {% if bookings %}
+      <div class="bookings-wrapper">
+        {% for b in bookings %}
+        <table class="booking-two-col">
+          <tr>
+            <th>User Name</th>
+            <td>{{ b.username }}</td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td>{{ b.email }}</td>
+          </tr>
+          <tr>
+            <th>Phone</th>
+            <td>{{ b.phoneno }}</td>
+          </tr>
+          <tr>
+            <th>City</th>
+            <td>{{ b.city }}</td>
+          </tr>
+          <tr>
+            <th>Bike</th>
+            <td>{{ b.prefered_bike }}</td>
+          </tr>
+          <tr>
+            <th>Price</th>
+            <td>{{ b.price }}</td>
+          </tr>
+        </table>
+        {% endfor %}
+      </div>
+      {% else %}
+      <p class="no-booking">No bookings found.</p>
+      {% endif %}
+
+      <h2>Testride History</h2>
+      {% if testrides %}
+      <div class="testride-wrapper">
+        {% for t in testrides %}
+        <table class="testride-two-col">
+          <tr>
+            <th>User Name</th>
+            <td>{{ t.username }}</td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td>{{ t.email }}</td>
+          </tr>
+          <tr>
+            <th>Phone</th>
+            <td>{{ t.phoneno }}</td>
+          </tr>
+          <tr>
+            <th>City</th>
+            <td>{{ t.city }}</td>
+          </tr>
+          <tr>
+            <th>Bike</th>
+            <td>{{ t.prefered_bike }}</td>
+          </tr>
+          <tr>
+            <th>Date &amp; Time</th>
+            <td>{{ t.testride_datetime|date:"d M Y H:i" }}</td>
+          </tr>
+          <tr>
+            <th>Price</th>
+            <td>{{ t.price }}</td>
+          </tr>
+        </table>
+        {% endfor %}
+      </div>
+      {% else %}
+      <p class="no-testride">No testrides found.</p>
+      {% endif %} {% if message %}
+      <p style="color: red; font-weight: bold; margin-top: 20px">
+        {{message}} {% endif %}
+      </p>
+    </div>
+
+    <a style="margin: 30px" href="{% url 'landing' %}"
+      >Go to home <i class="fa-solid fa-square-up-right"></i
+    ></a>
+  </body>
+</html>

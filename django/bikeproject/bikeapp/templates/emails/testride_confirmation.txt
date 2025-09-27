@@ -1,0 +1,12 @@
+Hi {{ testride.username }},
+
+Your test ride has been scheduled!
+
+Bike: {{ testride.prefered_bike }}
+City: {{ testride.city }}
+Phone: {{ testride.phoneno }}
+Date & Time: {{ testride.testride_datetime|date:"d M Y H:i" }}
+
+Thanks for choosing BikeZone.
+
+— BikeZone Team

@@ -1,0 +1,186 @@
+/* Universal  Selector */
+*{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  top: 0;
+  margin: 0;
+}
+body{
+    background-color: #ffffff;
+    color: #1e1e2f;
+    font-size: 20px;
+}
+/* Header Section */
+header{
+    position: fixed;
+    right: 0;
+    left: 0;
+    padding: 10px;
+    background: #833AB4;
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    z-index: 1;
+}
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header nav ul li{
+    display: inline-block;
+    margin-right: 35px;
+}
+header nav ul li a{
+    color: #ffffff;
+    text-decoration: none;
+}
+header nav ul li a:hover{
+    color: #1e1e2f;
+    font-weight: bolder;
+}
+/* Header Section Responsive Side Navigation Bar */
+.sidenavbar{
+    position: fixed;
+    background-color: #1e1e2f;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 40%;
+    font-size: 20px;
+    opacity: 0.9;
+    z-index: 2;
+    animation: sidenavbar 1s linear;
+    display: none;
+}
+@keyframes sidenavbar {
+    0%{
+        transform: translateX(-200px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+.sidenavbar nav{
+    padding: 80px 20px;
+    justify-self: center;
+}
+.sidenavbar h1{
+    color: #ffffff;
+    text-align: end;
+    margin-right: 20px;
+}
+.sidenavbar h1:hover{
+    cursor: pointer;
+    color: #ff0000;
+}
+.sidenavbar nav ul li{
+    margin-bottom: 10px;
+}
+.sidenavbar nav ul li a{
+    color: #ffffff;
+    text-decoration: none;
+}
+.sidenavbar nav ul li a:hover{
+    font-weight: bolder;
+    font-size: 25px;
+}
+/* Header Section Responsive Hamburger Menu */
+.hamburgermenu{
+    position: fixed;
+    right: 0;
+    left: 0;
+    padding: 10px;
+    background: #833AB4;
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    z-index: 1;
+    display: none;
+}
+.hamburgermenu div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hamburgermenu p i{
+    color: #ffffff;
+    font-size: 25px;
+}
+.hamburgermenu p i:hover{
+    color: #1e1e2f;
+    cursor: pointer;
+}
+/* Contact Section */
+.contact{
+    display: flex;
+    align-items: center;
+    margin-top: 150px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+    justify-content: space-between;
+    padding: 60px 10px;
+    background-color: #faddb6;
+    font-size: 20px;
+}
+.contact div{
+    padding: 20px 30px;
+}
+.contact p{
+    padding-bottom: 10px;
+}
+.contact #email,#msg{
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 20px;
+    background-color: #faddb6;
+    border: none;
+    border-bottom: 1px solid #ff0000;
+    outline: none;
+}
+.contact #send{
+    background-color: #ff0000;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #ffffff;
+}
+.contact #send:hover{
+    color: #1e1e2f;
+    font-weight: bolder;
+    cursor: pointer;
+}
+/* Footer Section */
+.footer{
+    background-color: #1e1e2f;
+    color: #ffffff;
+    padding: 20px 10px;
+    text-align: center;
+}
+.footer h2{
+    font-weight: bolder;
+    padding-bottom: 5px;
+}
+
+/* Media Query */
+/* max-width:935px */
+@media screen and (max-width:935px){
+    /* Navigation Bar */
+    header{
+        display: none;
+    }
+    .hamburgermenu{
+        display: block;
+    }
+}
+
+/* max-width:600px */
+@media screen and (max-width:600px){
+    /* Contact Section */
+    .contact{
+        font-size: 20px;
+        margin-top: 200px;
+        flex-direction: column;
+        margin-top: 120px;
+    }
+}
+

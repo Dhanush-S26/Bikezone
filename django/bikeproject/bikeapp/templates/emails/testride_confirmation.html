@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <body style="font-family: Arial, sans-serif; color: #333">
+    <h2>Test Ride Scheduled — BikeZone</h2>
+    <p>Hi {{ testride.username|default:testride.username }},</p>
+
+    <ul>
+      <li><strong>Test Ride ID:</strong> {{ testride.id }}</li>
+      <li><strong>Bike:</strong> {{ testride.prefered_bike }}</li>
+      <li><strong>City:</strong> {{ testride.city }}</li>
+      <li><strong>Phone:</strong> {{ testride.phoneno }}</li>
+      <li><strong>Date & Time:</strong>{{testride.testride_datetime}}</li>
+      <li><strong>Price:</strong>₹1000</li>
+    </ul>
+    <p>If you need to reschedule, reply to this email.</p>
+    <hr />
+    <small>© BikeZone</small>
+  </body>
+</html>

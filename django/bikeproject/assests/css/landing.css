@@ -1,0 +1,437 @@
+/* Universal  Selector */
+*{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  top: 0;
+  margin: 0;
+}
+body{
+    background-color: #ffffff;
+    color: #1e1e2f;
+    font-size: 20px;
+}
+/* Header Section */
+header{
+    position: fixed;
+    right: 0;
+    left: 0;
+    padding: 10px;
+    background: #833AB4;
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    z-index: 1;
+}
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header nav ul li{
+    display: inline-block;
+    margin-right: 35px;
+}
+header nav ul li a{
+    color: #ffffff;
+    text-decoration: none;
+}
+header nav ul li a:hover{
+    color: #1e1e2f;
+    font-weight: bolder;
+}
+/* Header Section Responsive Side Navigation Bar */
+.sidenavbar{
+    position: fixed;
+    background-color: #1e1e2f;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 40%;
+    font-size: 20px;
+    opacity: 0.9;
+    z-index: 2;
+    animation: sidenavbar 1s linear;
+    display: none;
+}
+@keyframes sidenavbar {
+    0%{
+        transform: translateX(-200px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+.sidenavbar nav{
+    padding: 80px 20px;
+    justify-self: center;
+}
+.sidenavbar h1{
+    color: #ffffff;
+    text-align: end;
+    margin-right: 20px;
+}
+.sidenavbar h1:hover{
+    cursor: pointer;
+    color: #ff0000;
+}
+.sidenavbar nav ul li{
+    margin-bottom: 10px;
+}
+.sidenavbar nav ul li a{
+    color: #ffffff;
+    text-decoration: none;
+}
+.sidenavbar nav ul li a:hover{
+    font-weight: bolder;
+    font-size: 25px;
+}
+/* Header Section Responsive Hamburger Menu */
+.hamburgermenu{
+    position: fixed;
+    right: 0;
+    left: 0;
+    padding: 10px;
+    background: #833AB4;
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    z-index: 1;
+    display: none;
+}
+.hamburgermenu div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hamburgermenu p i{
+    color: #ffffff;
+    font-size: 25px;
+}
+.hamburgermenu p i:hover{
+    color: #1e1e2f;
+    cursor: pointer;
+}
+/* Banner Section */
+#bannersec{
+    padding-top: 50px;
+}
+.bannersection{
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 80px;
+    margin-left: 60px;
+}
+.bannersection div{
+    margin-left: 15px;
+}
+.bannerabout h1{
+    font-size: 80px;
+    font-weight:bolder;
+}
+.bannerabout p{
+    color: #1e1e2f;
+    margin-bottom: 30px;
+}
+.bannerabout a{
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #ff0000;
+    padding: 10px;
+    border-radius: 10px;
+}
+.bannerabout a:hover{
+    color: #1e1e2f;
+    font-weight: bolder;
+}
+.bannerbike{
+    display: flex;
+    width: 670px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.bannerbike img{
+    width: 670px;
+    height: 500px;
+    animation: bannerbikeimg 30s infinite;
+}
+@keyframes bannerbikeimg {
+    0%{
+        transform: translateX(0px);
+    }
+    10%{
+        transform: translateX(-670px);
+    }
+    20%{
+        transform: translateX(-1340px);
+    }
+    30%{
+        transform: translateX(-2010px);
+    }
+    40%{
+        transform: translateX(-2680px);
+    }
+    50%{
+        transform: translateX(-3350px);
+    }
+    60%{
+        transform: translateX(-2680px);
+    }
+    70%{
+        transform: translateX(-2010px);
+    }
+    80%{
+        transform: translateX(-1340px);
+    }
+    90%{
+        transform: translateX(-670px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+/* Brands */
+/* .brands{
+    display: flex;
+    margin: 15px 20px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.brand{
+    margin: 10px;
+}
+.brand img{
+    width: 200px;
+    height: 150px;
+} */
+ .brands{
+    display: flex;
+    overflow: hidden;
+    margin-left: 15px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+ }
+ .brands img{
+    width: 200px;
+    height: 150px;
+    margin-right: 40px;
+    animation: brands 20s infinite;
+ }
+@keyframes brands {
+    0%{
+        transform: translateX(0px);
+    }
+    50%{
+        transform: translateX(-1000px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+/* About Section */
+.aboutsection{
+    padding-top: 35px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin: 0px 100px;
+    margin-bottom: 40px;
+    font-size: 20px;
+    background-color: #faddb6;
+}
+.aboutsection div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+.aboutsection .missionvision{
+    display: flex;
+    flex-direction: row;
+}
+.aboutsection h3{
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+/* Footer Section */
+.footer{
+    background-color: #1e1e2f;
+    color: #ffffff;
+    padding: 20px 10px;
+    text-align: center;
+}
+.footer h2{
+    font-weight: bolder;
+    padding-bottom: 5px;
+}
+
+
+/* Media Query */
+/* max-width:1250px */
+@media screen and (max-width:1250px){
+    /* Banner Section */
+    .bannerbike{
+        width: 500px;
+    }
+    .bannerbike img{
+        width: 500px;
+    }
+    @keyframes bannerbikeimg {
+        0%{
+        transform: translateX(0px);
+    }
+    10%{
+        transform: translateX(-500px);
+    }
+    20%{
+        transform: translateX(-1000px);
+    }
+    30%{
+        transform: translateX(-1500px);
+    }
+    40%{
+        transform: translateX(-2000px);
+    }
+    50%{
+        transform: translateX(-2500px);
+    }
+    60%{
+        transform: translateX(-2000px);
+    }
+    70%{
+        transform: translateX(-1500px);
+    }
+    80%{
+        transform: translateX(-1000px);
+    }
+    90%{
+        transform: translateX(-500px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+    }
+}
+/* max-width:1000px */
+@media screen and (max-width:1090px){
+    /* Banner Section */
+    .bannerbike{
+        width: 350px;
+    }
+    .bannerbike img{
+        width: 350px;
+    }
+    @keyframes bannerbikeimg {
+        0%{
+        transform: translateX(0px);
+    }
+    10%{
+        transform: translateX(-350px);
+    }
+    20%{
+        transform: translateX(-700px);
+    }
+    30%{
+        transform: translateX(-1050px);
+    }
+    40%{
+        transform: translateX(-1400px);
+    }
+    50%{
+        transform: translateX(-1750px);
+    }
+    60%{
+        transform: translateX(-1400px);
+    }
+    70%{
+        transform: translateX(-1050px);
+    }
+    80%{
+        transform: translateX(-700px);
+    }
+    90%{
+        transform: translateX(-350px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+    }
+}
+/* max-width:935px */
+@media screen and (max-width:935px){
+    /* Navigation Bar */
+    header{
+        display: none;
+    }
+    .hamburgermenu{
+        display: block;
+    }
+    /* Banner Section */
+    .bannersection{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-left: 0px;
+        padding-top: 40px;
+    }
+    .bannerabout h1{
+        font-size: 60px;
+    }
+    .bannersection div{
+        margin-bottom: 30px;
+    }
+    .bannerbike{
+        flex-direction: column;
+        border-radius: 10px;
+        height: 230px;
+    }
+    .bannerbike img{
+        height: 230px;
+    }
+    @keyframes bannerbikeimg {
+        0%{
+        transform: translateY(0px);
+    }
+    10%{
+        transform: translateY(-230px);
+    }
+    20%{
+        transform: translateY(-460px);
+    }
+    30%{
+        transform: translateY(-690px);
+    }
+    40%{
+        transform: translateY(-920px);
+    }
+    50%{
+        transform: translateY(-1150px);
+    }
+    60%{
+        transform: translateY(-920px);
+    }
+    70%{
+        transform: translateY(-690px);
+    }
+    80%{
+        transform: translateY(-460px);
+    }
+    90%{
+        transform: translateY(-230px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+    }
+    /* Brands */
+    .brand img{
+        width: 150px;
+        height: 100px;
+    }
+}
+@media  screen and (max-width:700px) {
+    /* About Section */
+    .aboutsection{
+        margin: 20px 20px;
+    }
+    .aboutsection .missionvision{
+        flex-direction: column;
+    }
+}

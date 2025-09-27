@@ -1,0 +1,7 @@
+Hi {{ user.username|default:user.username }},
+
+Welcome to BikeZone! Thanks for registering.
+
+If you need help, just reply to this email.
+
+— BikeApp Team

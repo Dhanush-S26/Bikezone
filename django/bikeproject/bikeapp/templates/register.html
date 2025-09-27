@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>register</title>
+  </head>
+  <style>
+    .mess {
+      text-align: center;
+      margin: 50px;
+    }
+    form {
+      font-size: 20px;
+    }
+    form input {
+      font-size: 20px;
+      padding: 5px 10px;
+      border-radius: 10px;
+      border: none;
+    }
+    form button {
+      font-size: 20px;
+      padding: 5px 10px;
+      border-radius: 10px;
+      border: none;
+      background-color: red;
+      color: white;
+    }
+    form button:hover {
+      cursor: pointer;
+      font-weight: bold;
+    }
+    form p a {
+      text-decoration: none;
+      color: blue;
+    }
+    .bg {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+    }
+  </style>
+  <body>
+    <div class="bg">
+      <video src="{% static 'video/video3.mp4' %}" muted autoplay loop></video>
+    </div>
+    <div class="mess">
+      {% for message in messages %}
+      <p
+        style="color:
+            {% if 'success' in message.tags %}green
+            {% elif 'info' in message.tags %}blue
+            {% elif 'error' in message.tags %}red
+            {% else %}black
+            {% endif %};
+            background-color:white;
+        padding:5px;
+        font-size:20px;
+        display:flex;
+        justify-content:center;
+        border-radius:10px;
+        align-items:center;
+        text-align:center;
+        width:60%;
+        margin-left:20%;
+        margin-right:20%;
+            "
+      >
+        {{message}}
+      </p>
+      {% endfor %}
+    </div>
+    <form action="{% url 'register' %}" method="post">
+      {% csrf_token %}
+      <center>
+        <h1 style="color: white; font-size: 40px">Register</h1>
+        <input
+          type="text"
+          name="first_name"
+          id=""
+          placeholder="First Name"
+          required
+        />
+        <br />
+        <br />
+        <input
+          type="text"
+          name="last_name"
+          id=""
+          placeholder="Last Name"
+          required
+        />
+        <br />
+        <br />
+        <input
+          type="text"
+          name="username"
+          id=""
+          placeholder="User Name"
+          required
+        />
+        <br />
+        <br />
+        <input type="email" name="email" id="" placeholder="Email" required />
+        <br />
+        <br />
+        <input
+          type="password"
+          name="password1"
+          id=""
+          placeholder="Password"
+          required
+        />
+        <br />
+        <br />
+        <input
+          type="password"
+          name="password2"
+          id=""
+          placeholder="Confirm Password"
+          required
+        />
+        <br />
+        <br />
+        <button type="submit" name="register">Register</button> <br />
+        <br />
+        <p
+          style="
+            text-align: center;
+            font-weight: bold;
+            font-size: 30px;
+            color: white;
+          "
+        >
+          Already have accounts? <a href="{% url 'login' %}">Login</a>
+        </p>
+      </center>
+    </form>
+  </body>
+</html>

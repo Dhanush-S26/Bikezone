@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BikeZone</title>
+    <!-- Title Icon -->
+    <link rel="icon" href="image/bikeTitle.png" />
+    <!-- Google Fonts Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome CDN Links -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="{% static 'css/bike1.css' %}" />
+  </head>
+  <body>
+    <!-- Header Section Static -->
+    <header>
+      <nav>
+        <h1 style="font-weight: bolder">
+          BikeZone <i class="fa-solid fa-motorcycle" style="color: #1e1e2f"></i>
+        </h1>
+        <ul>
+          <li><a href="{% url 'landing' %}">Home</a></li>
+          <li><a href="{% url 'bikes' %}">Bikes</a></li>
+          <li><a href="#aboutsec">About</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Header Section Responsive Side Navigation Bar -->
+    <div class="sidenavbar">
+      <h1 onclick="closeSideNavigationBar()">
+        <i class="fa-solid fa-xmark"></i>
+      </h1>
+      <nav>
+        <ul onclick="closeSideNavigationBar()">
+          <li><a href="{% url 'landing' %}">Home</a></li>
+          <li><a href="{% url 'bikes' %}">Bikes</a></li>
+          <li><a href="#aboutsec">About</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- Header Section Responsive Hamburger Menu -->
+    <div class="hamburgermenu">
+      <div>
+        <h1 style="font-weight: bolder">
+          BikeZone <i class="fa-solid fa-motorcycle" style="color: #1e1e2f"></i>
+        </h1>
+        <p id="bar" onclick="sideNavigationBar()">
+          <i class="fa-solid fa-bars"></i>
+        </p>
+      </div>
+    </div>
+    <!-- knowmore Section -->
+    <div class="knowmore">
+      <h2>BMW S 1000 XR</h2>
+      <img src="{% static 'image/bike16.png' %}" alt="BMW S 1000 XR" width="500px" />
+      <p>
+        The BMW S 1000 XR blends superbike performance with touring
+        practicality, offering unmatched comfort and speed for long journeys.
+      </p>
+
+      <h3>Price</h3>
+      <p>₹25 Lakhs (Ex-Showroom, India)</p>
+
+      <h3>Specifications</h3>
+      <ul>
+        <li>Engine: 999 cc, inline 4-cylinder</li>
+        <li>Power: ~165 HP @ 11,000 rpm</li>
+        <li>Torque: ~114 Nm @ 9,250 rpm</li>
+        <li>Transmission: 6-speed, quickshifter</li>
+        <li>Top Speed: ~250+ km/h</li>
+        <li>Weight: ~226 kg (Kerb)</li>
+        <li>Fuel Tank: 20 L</li>
+      </ul>
+
+      <h3>Features</h3>
+      <ul>
+        <li>6.5-inch TFT color display</li>
+        <li>Dynamic ESA suspension</li>
+        <li>Multiple riding modes</li>
+        <li>Cornering ABS Pro</li>
+        <li>Cruise control for touring comfort</li>
+      </ul>
+    </div>
+    <!-- Footer Section -->
+    <div class="footer">
+      <h2>BikeZone <i class="fa-solid fa-motorcycle"></i></h2>
+      <p>Your one-stop destination for bikes, gear, and rides.</p>
+      <p>📞 123-456-7890</p>
+      <p>© 2025 BikeZone. All Rights Reserved.</p>
+    </div>
+    <!-- JavaScript Link -->
+    <script src="{% static 'js/bike1.js' %}"></script>
+  </body>
+</html>

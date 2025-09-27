@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+  <style>
+    .mess {
+      text-align: center;
+      margin: 50px;
+    }
+    form {
+      font-size: 20px;
+    }
+    form input {
+      font-size: 20px;
+      padding: 5px 10px;
+      border-radius: 10px;
+      border: none;
+    }
+    form button {
+      font-size: 20px;
+      padding: 5px 10px;
+      border-radius: 10px;
+      border: none;
+      background-color: green;
+      color: white;
+    }
+    form button:hover {
+      cursor: pointer;
+      font-weight: bold;
+    }
+    #bg {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: -1;
+    }
+  </style>
+  <body>
+    <div id="bg">
+      <video src="{% static 'video/video3.mp4' %}" muted autoplay loop></video>
+    </div>
+    <div class="mess">
+      {% for message in messages %}
+      <p
+        style="color:
+            {% if 'success' in message.tags %}green
+            {% elif 'info' in message.tags %}blue
+            {% elif 'error' in message.tags %}red
+            {% else %}black
+            {% endif %};
+            background-color:white;
+            padding:5px;
+            font-size:20px;
+            display:flex;
+            justify-content:center;
+            border-radius:10px;
+            align-items:center;
+            text-align:center;
+            width:60%;
+            margin-left:20%;
+            margin-right:20%;
+            "
+      >
+        {{message}}
+      </p>
+      {% endfor %}
+    </div>
+    <center>
+      <h1 style="margin-top: 200px; color: white; font-size: 40px">Log in</h1>
+      <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" id="" placeholder="User Name" />
+        <br />
+        <br />
+        <input type="password" name="password" id="" placeholder="Password" />
+        <br />
+        <br />
+        <button type="submit">Login</button>
+      </form>
+    </center>
+  </body>
+</html>

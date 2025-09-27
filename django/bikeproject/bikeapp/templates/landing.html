@@ -1,0 +1,195 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BikeZone</title>
+    <!-- Title Icon -->
+    <link rel="icon" href="{% static 'image/bikeTitle.png' %}" />
+    <!-- Google Fonts Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome CDN Links -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}" />
+  </head>
+  <body>
+    <!-- Header Section Static -->
+    <header>
+      <nav>
+        <h1 style="font-weight: bolder">
+          BikeZone <i class="fa-solid fa-motorcycle" style="color: #1e1e2f"></i>
+        </h1>
+        <ul>
+          <li><a href="{% url 'landing' %}">Home</a></li>
+          <li><a href="{% url 'bikes' %}">Bikes</a></li>
+          <li><a href="#aboutsec">About</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          {% if user.is_authenticated %}
+          <li>Hello, {{user.first_name}}</li>
+          <li><a href="accounts/logout">Logout</a></li>
+          {% else %}
+          <li><a href="accounts/register">register</a></li>
+          <li><a href="accounts/login">Login</a></li>
+          {% endif %}
+          <li>
+            <a href="{% url 'profile' %}"><i class="fa-solid fa-user"></i></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Header Section Responsive Side Navigation Bar -->
+    <div class="sidenavbar">
+      <h1 onclick="closeSideNavigationBar()">
+        <i class="fa-solid fa-xmark"></i>
+      </h1>
+      <nav>
+        <ul onclick="closeSideNavigationBar()">
+          <li><a href="{% url 'landing' %}">Home</a></li>
+          <li><a href="{% url 'bikes' %}">Bikes</a></li>
+          <li><a href="#aboutsec">About</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          {% if user.is_authenticated %}
+          <li style="color: white; list-style: none">
+            Hello, {{user.first_name}}
+          </li>
+          <li><a href="accounts/logout">Logout</a></li>
+          {% else %}
+          <li><a href="accounts/register">register</a></li>
+          <li><a href="accounts/login">Login</a></li>
+          {% endif %}
+          <li>
+            <a href="{% url 'profile' %}"><i class="fa-solid fa-user"></i></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- Header Section Responsive Hamburger Menu -->
+    <div class="hamburgermenu">
+      <div>
+        <h1 style="font-weight: bolder">
+          BikeZone <i class="fa-solid fa-motorcycle" style="color: #1e1e2f"></i>
+        </h1>
+        <p id="bar" onclick="sideNavigationBar()">
+          <i class="fa-solid fa-bars"></i>
+        </p>
+      </div>
+    </div>
+    <!-- Banner Section -->
+    <div id="bannersec"></div>
+    <div class="bannersection">
+      <div class="bannerabout">
+        <h1>Find Your <br />Dream Bike</h1>
+        <p>Explore our wide range of top <br />quality bike for every ride.</p>
+        <a href="{% url 'bikes' %}">Explore</a>
+        <a href="{% url 'book' %}">Book</a>
+        <a href="{% url 'testride' %}">Test Ride</a>
+      </div>
+      <div class="bannerbike">
+        <img src="{% static 'image/bike8.png' %}" alt="Bike" />
+        <img src="{% static 'image/bike2home.png' %}" alt="Bike" />
+        <img src="{% static 'image/bike3home.png' %}" alt="Bike" />
+        <img src="{% static 'image/bike4home.png' %}" alt="Bike" />
+        <img src="{% static 'image/bike9.png' %}" alt="Bike" />
+        <img src="{% static 'image/bike7.png' %}" alt="Bike" />
+      </div>
+    </div>
+    <!-- Brands -->
+    <h1 style="font-weight: bolder; margin: 85px; text-align: center">
+      Brands
+    </h1>
+    <div class="brands">
+      <div class="brand">
+        <img src="{% static 'image/ducati.png' %}" alt="" />
+      </div>
+      <div class="brand">
+        <img src="{% static 'image/honda.png' %}" alt="" />
+      </div>
+      <div class="brand">
+        <img src="{% static 'image/kawasaki.png' %}" alt="" />
+      </div>
+      <div class="brand">
+        <img src="{% static 'image/bmw.png' %}" alt="" />
+      </div>
+      <div class="brand">
+        <img src="{% static 'image/royal enfield.png' %}" alt="Royal" />
+      </div>
+      <div class="brand">
+        <img src="{% static 'image/ktm.png' %}" alt="" />
+      </div>
+      <div class="brand">
+        <img src="{% static 'image/yamaha.png' %}" alt="" />
+      </div>
+      <div class="brand">
+        <img src="{% static 'image/bajaj.png' %}" alt="" />
+      </div>
+      <div class="brand">
+        <img src="{% static 'image/suzuki.jpg' %}" alt="" />
+      </div>
+      <div class="brand">
+        <img src="{% static 'image/ola.jpg' %}" alt="" />
+      </div>
+    </div>
+    <!-- About Section -->
+    <div class="aboutsection" id="aboutsec">
+      <h1 style="font-weight: bolder; margin: 50px; text-align: center">
+        About Us
+      </h1>
+      <div>
+        <h3>Who We Are</h3>
+        <p>
+          We are a passionate team of biking enthusiasts dedicated to helping
+          people find their perfect ride. Whether you're a daily commuter, a
+          weekend adventurer, or a speed lover, we aim to provide the best bikes
+          that suit every lifestyle and budget.
+        </p>
+      </div>
+      <div class="missionvision">
+        <div>
+          <h3>Mission</h3>
+          <p>
+            To make high-quality bikes accessible to everyone and promote a
+            healthier, eco-friendly mode of transport.
+          </p>
+        </div>
+        <div>
+          <h3>Vision</h3>
+          <p>
+            To become the most trusted and customer-friendly bike platform by
+            delivering value, performance, and a smooth buying experience.
+          </p>
+        </div>
+      </div>
+      <div>
+        <h3>Our Journey</h3>
+        <p>
+          Our journey began with a simple idea — to make bike buying easier and
+          more transparent. From a small garage to a fully functional online
+          platform, we've grown with our community of bikers. Today, we’re proud
+          to offer a curated collection of bikes backed by excellent service.
+        </p>
+      </div>
+    </div>
+    <!-- Footer Section -->
+    <div class="footer">
+      <h2>BikeZone <i class="fa-solid fa-motorcycle"></i></h2>
+      <p>Your one-stop destination for bikes, gear, and rides.</p>
+      <p>📞 123-456-7890</p>
+      <p>© 2025 BikeZone. All Rights Reserved.</p>
+    </div>
+    <!-- JavaScript Link -->
+    <script src="{% static 'js/landing.js' %}"></script>
+  </body>
+</html>

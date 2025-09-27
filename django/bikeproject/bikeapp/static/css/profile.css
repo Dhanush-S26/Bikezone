@@ -1,0 +1,160 @@
+/* Universal  Selector */
+*{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  top: 0;
+  margin: 0;
+}
+body{
+    background-color: #ffffff;
+    color: #1e1e2f;
+    font-size: 20px;
+}
+/* Profile Section */
+.profile{
+    margin-top: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 60%;
+    text-align: center;
+    border: 1px solid #1e1e2f;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 5px 5px 5px black;
+}
+.profile li{
+    list-style: none;
+    text-align: center;
+}
+.profile h2{
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0000ff;
+    margin-top: 20px;
+}
+a i{
+    margin-left: 5px;
+    margin-top: 2px;
+}
+
+.bookings-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* center all tables */
+  gap: 20px;                /* space between each booking */
+  margin: 30px 0;
+  padding: 0 10px;
+}
+
+.booking-two-col {
+  width: 90%;
+  max-width: 600px;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.booking-two-col th,
+.booking-two-col td {
+  border: 1px solid black;
+  padding: 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.booking-two-col th {
+  width: 40%;
+  background-color:rgb(70, 70, 70);
+  color: white;
+  font-weight: 600;
+}
+
+.booking-two-col td {
+  background-color: #ffffff;
+}
+
+.no-booking {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.testride-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* center all tables */
+  gap: 20px;             /* space between each test-ride table */
+  margin: 30px 0;
+  padding: 0 10px;
+}
+
+.testride-two-col {
+  width: 90%;
+  max-width: 600px;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.testride-two-col th,
+.testride-two-col td {
+  border: 1px solid black;
+  padding: 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.testride-two-col th {
+  width: 40%;
+  background-color: rgb(70, 70, 70);
+  color: white;
+  font-weight: 600;
+}
+
+.testride-two-col td {
+  background-color: #ffffff;
+}
+
+.no-testride {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .testride-two-col th,
+  .testride-two-col td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+
+/* Responsive: table shrinks but stays readable */
+@media (max-width: 480px) {
+  .booking-two-col th,
+  .booking-two-col td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* Media Query */
+@media screen and (max-width:600px){
+    /* Profile Section */
+    .profile{
+        margin-left: 0;
+        margin-right: 0;
+        width: 95%;
+        border: none;
+        padding: 0;
+    }
+}

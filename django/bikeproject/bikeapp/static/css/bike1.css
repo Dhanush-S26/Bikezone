@@ -1,0 +1,369 @@
+/* Universal  Selector */
+*{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  top: 0;
+  margin: 0;
+}
+body{
+    background-color: #ffffff;
+    color: #1e1e2f;
+    font-size: 20px;
+}
+/* Header Section */
+header{
+    position: fixed;
+    right: 0;
+    left: 0;
+    padding: 10px;
+    background: #833AB4;
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    z-index: 1;
+}
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header nav ul li{
+    display: inline-block;
+    margin-right: 35px;
+}
+header nav ul li a{
+    color: #ffffff;
+    text-decoration: none;
+}
+header nav ul li a:hover{
+    color: #1e1e2f;
+    font-weight: bolder;
+}
+/* Header Section Responsive Side Navigation Bar */
+.sidenavbar{
+    position: fixed;
+    background-color: #1e1e2f;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 40%;
+    font-size: 20px;
+    opacity: 0.9;
+    z-index: 2;
+    animation: sidenavbar 1s linear;
+    display: none;
+}
+@keyframes sidenavbar {
+    0%{
+        transform: translateX(-200px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+.sidenavbar nav{
+    padding: 80px 20px;
+    justify-self: center;
+}
+.sidenavbar h1{
+    color: #ffffff;
+    text-align: end;
+    margin-right: 20px;
+}
+.sidenavbar h1:hover{
+    cursor: pointer;
+    color: #ff0000;
+}
+.sidenavbar nav ul li{
+    margin-bottom: 10px;
+}
+.sidenavbar nav ul li a{
+    color: #ffffff;
+    text-decoration: none;
+}
+.sidenavbar nav ul li a:hover{
+    font-weight: bolder;
+    font-size: 25px;
+}
+/* Header Section Responsive Hamburger Menu */
+.hamburgermenu{
+    position: fixed;
+    right: 0;
+    left: 0;
+    padding: 10px;
+    background: #833AB4;
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    z-index: 1;
+    display: none;
+}
+.hamburgermenu div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hamburgermenu p i{
+    color: #ffffff;
+    font-size: 25px;
+}
+.hamburgermenu p i:hover{
+    color: #1e1e2f;
+    cursor: pointer;
+}
+/* Knowmore Section */
+.knowmore{
+    padding-top: 100px;
+    margin: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.knowmore h2{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: biketitle 1s linear;
+}
+@keyframes biketitle {
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+.knowmore img{
+    box-shadow: 5px 5px 5px black;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    animation: bikeimg 1s linear;
+}
+@keyframes bikeimg {
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+.knowmore p{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.knowmore ul{
+    margin-bottom: 20px;
+}
+.knowmore h3,li{
+    margin-bottom: 5px;
+}
+.knowmore h3{
+    font-weight: bold;
+}
+/* Form Section */
+form{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-top: 100px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 50px;
+    font-size: 20px;
+    padding: 10px 15px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+form h1{
+    text-shadow: 5px 5px 5px rgb(80, 80, 80);
+}
+form label,input,select{
+    margin-bottom: 5px;
+    font-size: 20px;
+    text-align: center;
+}
+form input{
+    padding: 5px;
+    outline: none;
+}
+form select{
+    padding: 5px;
+}
+form button{
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 10px 10px;
+    color: #ffffff;
+    background-color: #ff0000;
+    border: none;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+form button:hover{
+    cursor: pointer;
+    color: #1e1e2f;
+    font-weight: bolder;
+}
+/* Footer Section */
+.footer{
+    background-color: #1e1e2f;
+    color: #ffffff;
+    padding: 20px 10px;
+    text-align: center;
+}
+.footer h2{
+    font-weight: bolder;
+    padding-bottom: 5px;
+}
+.booking-table-container {
+  max-width: 500px;       
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.booking-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  background: #fff;
+}
+
+.booking-table th,
+.booking-table td {
+  padding: 12px;
+  border: 1px solid black;
+  text-align: left;
+}
+
+.booking-table th {
+  background-color: rgb(70, 70, 70);
+  color: white;             /* white text for contrast */
+  width: 40%;
+}
+
+.booking-table td {
+  background-color: #ffffff;
+}
+.testride-table-container {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.testride-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  background: #fff;
+}
+
+.testride-table th,
+.testride-table td {
+  padding: 12px;
+  border: 1px solid black;
+  text-align: left;
+}
+
+.testride-table th {
+  background-color:rgb(70, 70, 70); 
+  color: white;           
+  width: 40%;
+}
+
+.testride-table td {
+  background-color: #ffffff;
+}
+
+/* ✅ Responsive: stack rows on small screens */
+@media (max-width: 600px) {
+  .testride-table,
+  .testride-table tr,
+  .testride-table th,
+  .testride-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .testride-table th {
+    width: 100%;
+    border-bottom: none;
+  }
+
+  .testride-table td {
+    border-top: none;
+    margin-bottom: 10px;
+  }
+}
+
+
+/* Responsive: stack rows on very small screens */
+@media (max-width: 600px) {
+  .booking-table,
+  .booking-table tr,
+  .booking-table th,
+  .booking-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .booking-table th {
+    width: 100%;
+    border-bottom: none;
+  }
+
+  .booking-table td {
+    border-top: none;
+    margin-bottom: 10px;
+  }
+}
+
+/* Media Query */
+/* max-width:935px */
+@media screen and (max-width:935px){
+    /* Navigation Bar */
+    header{
+        display: none;
+    }
+    .hamburgermenu{
+        display: block;
+    }
+}
+
+/* max-width:570px */
+@media screen and (max-width:570px){
+    /* Knowmore Section */
+    .knowmore img{
+        width: 300px;
+    }
+    /* Form Section */
+    form{
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding: 0;
+        border: none;
+    }
+}
+
+/* max-width:300px */
+@media screen and (max-width:380px) {
+    /* Knowmore Section */
+    .knowmore img{
+        width: 200px;
+    }
+    /* Form Section */
+    form{
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        /* padding: 0;
+        border: none; */
+    }
+    form input,select{
+        border: none;
+    }
+}

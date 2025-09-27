@@ -1,0 +1,31 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('',views.home,name='landing'),
+    path('profile/',views.profile,name='profile'),
+    path('bikes/',views.bikes,name='bikes'),
+    path('bike1/',views.bike1,name='bike1'),
+    path('bike2/',views.bike2,name='bike2'),
+    path('bike3/',views.bike3,name='bike3'),
+    path('bike4/',views.bike4,name='bike4'),
+    path('bike5/',views.bike5,name='bike5'),
+    path('bike6/',views.bike6,name='bike6'),
+    path('bike7/',views.bike7,name='bike7'),
+    path('bike8/',views.bike8,name='bike8'),
+    path('bike9/',views.bike9,name='bike9'),
+    path('bike10/',views.bike10,name='bike10'),
+    path('bike11/',views.bike11,name='bike11'),
+    path('bike12/',views.bike12,name='bike12'),
+    path('bike13/',views.bike13,name='bike13'),
+    path('bike14/',views.bike14,name='bike14'),
+    path('bike15/',views.bike15,name='bike15'),
+    path('bike16/',views.bike16,name='bike16'),
+    path('bike17/',views.bike17,name='bike17'),
+    path('bike18/',views.bike18,name='bike18'),
+    path('bike19/',views.bike19,name='bike19'),
+    path('bike20/',views.bike20,name='bike20'),
+    path('contact/',views.contact,name='contact'),
+    path('book/',views.book,name='book'),
+    path('testride/',views.testride,name='testride'),
+]

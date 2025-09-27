@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <body style="font-family: Arial, sans-serif; color: #333">
+    <h2>Booking Confirmed — BikeZone</h2>
+    <p>Hi {{ booking.username }},</p>
+
+    <p>Your bike booking is confirmed.</p>
+    <ul>
+      <li><strong>Bike:</strong> {{ booking.prefered_bike }}</li>
+      <li><strong>City:</strong> {{ booking.city }}</li>
+      <li><strong>Phone:</strong> {{ booking.phoneno }}</li>
+      <li><strong>Price:</strong> {{ bike_price }}</li>
+    </ul>
+
+    <p>Thanks for choosing BikeZone.</p>
+    <hr />
+    <small>© BikeZone</small>
+  </body>
+</html>

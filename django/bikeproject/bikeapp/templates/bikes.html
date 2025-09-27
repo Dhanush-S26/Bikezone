@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BikeZone</title>
+    <!-- Title Icon -->
+    <link rel="icon" href="{% static 'image/bikeTitle.png' %}" />
+    <!-- Google Fonts Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome CDN Links -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="{% static 'css/bikes.css' %}" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <nav>
+        <h1 style="font-weight: bolder">
+          BikeZone <i class="fa-solid fa-motorcycle" style="color: #1e1e2f"></i>
+        </h1>
+        <ul>
+          <li><a href="{% url 'landing' %}">Home</a></li>
+          <li><a href="{% url 'bikes' %}">Bikes</a></li>
+          <li><a href="#aboutsec">About</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Header Section Responsive Side Navigation Bar -->
+    <div class="sidenavbar">
+      <h1 onclick="closeSideNavigationBar()">
+        <i class="fa-solid fa-xmark"></i>
+      </h1>
+      <nav>
+        <ul onclick="closeSideNavigationBar()">
+          <li><a href="{% url 'landing' %}">Home</a></li>
+          <li><a href="{% url 'bikes' %}">Bikes</a></li>
+          <li><a href="#aboutsec">About</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- Header Section Responsive Hamburger Menu -->
+    <div class="hamburgermenu">
+      <div>
+        <h1 style="font-weight: bolder">
+          BikeZone <i class="fa-solid fa-motorcycle" style="color: #1e1e2f"></i>
+        </h1>
+        <p id="bar" onclick="sideNavigationBar()">
+          <i class="fa-solid fa-bars"></i>
+        </p>
+      </div>
+    </div>
+    <!-- Big Bike Video -->
+    <div class="bigbike">
+      <video src="{% static 'video/video3.mp4' %}" muted autoplay loop></video>
+    </div>
+    <!-- Bikes Search -->
+    <div id="bikessea"></div>
+    <div class="offer">
+      <p>Limited Time Offer: Free Delivery on Selected Bikes!</p>
+    </div>
+    <div class="bikesearch">
+      <input type="text" id="searchbike" placeholder="Search Bike" name="searchbike"/>
+      <div class="searchglass">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+    </div>
+    <!-- Bikes Section 1 -->
+    <div class="bikes">
+      {% for bike in bikess %}
+      <div>
+        <img src="{{bike.image.url}}" alt="Bike" width="300px" height="300px" />
+        <h3>{{bike.name}}</h3>
+        <h4>{{bike.price}}</h4>
+        <p>{{bike.description}}</p>
+        <a href="{% url bike.anchor_link %}" target="_blank">
+          {{ bike.anchor }} <i class="fa-solid fa-angles-right"></i>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+    <!-- Load More -->
+    <div class="loadmore">
+      <p onclick="loadMoreBikes()">
+        Load More Bikes <i class="fa-solid fa-angle-down"></i>
+      </p>
+    </div>
+    <!-- Bike Section 2 -->
+    <div class="bikes1">
+      {% for bike in bikess %}
+      <div>
+        <img src="{{bike.image.url}}" alt="Bike" width="300px" height="300px" />
+        <h3>{{bike.name}}</h3>
+        <h4>{{bike.price}}</h4>
+        <p>{{bike.description}}</p>
+        <a href="{% url bike.anchor_link %}" target="_blank">
+          {{ bike.anchor }} <i class="fa-solid fa-angles-right"></i>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+    <!-- JavaScript Link -->
+    <script src="{% static 'js/bikes.js' %}"></script>
+  </body>
+</html>
