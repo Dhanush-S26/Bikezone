@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'bikeapp',
         'USER' : 'postgres',
-        'PASSWORD' : 'mcc@2020',
+        'PASSWORD' : 'your_db_password',
         'HOST' : 'localhost',
         'PORT' : '5432',
     }
